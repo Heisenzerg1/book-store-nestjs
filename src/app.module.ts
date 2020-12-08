@@ -9,13 +9,13 @@ import { UserModule } from './modules/user/user.module';
 import { RoleModule } from './modules/role/role.module';
 import { UserService } from './modules/user/user.service';
 import { UserRepository } from './modules/user/user.repository';
-import { MapperService } from './shared/mapper.service';
+
 
 
 @Module({
   imports: [ConfigModule, DatabaseModule, UserModule, RoleModule],
   controllers: [AppController],
-  providers: [AppService, UserService, UserRepository, MapperService],
+  providers: [AppService, UserService, UserRepository],
 })
 export class AppModule {
   static port: number | string;
