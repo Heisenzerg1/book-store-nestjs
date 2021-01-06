@@ -40,4 +40,11 @@ export class UserController {
 
     }
 
+    @Post('setRole/:userId/:roleId')
+    async setRoleToUser(
+        @Param('userId', ParseIntPipe) userId: number,
+        @Param('roleId', ParseIntPipe) roleId: number,
+    )   {
+        return this._userService.setRoleToUser(userId, roleId);
+    }
 }
